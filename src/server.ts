@@ -8,6 +8,7 @@ import { getDbConnection  } from "./db";
 const app = express();
 
 app.use('*', cors());
+app.get('/health', (req, res) => res.send('Healthy'));
 
 getDbConnection();
 startGrpcServer();
